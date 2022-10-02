@@ -82,7 +82,8 @@ public class CraftingManager : MonoBehaviour
             }
         }
 
-        if(currentRecipeString == "fireearthwater")
+        if(currentRecipeString == "fireearthwater" || currentRecipeString == "firewaterearth" || currentRecipeString == "waterfireearth"
+            || currentRecipeString == "waterearthfire" || currentRecipeString == "earthwaterfire" || currentRecipeString == "earthfirewater")
         {
             gameOver.SetActive(true);
         }
