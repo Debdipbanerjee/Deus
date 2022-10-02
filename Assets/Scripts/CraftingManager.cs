@@ -16,6 +16,8 @@ public class CraftingManager : MonoBehaviour
     public Item[] recipeResults;
     public Slot resultSlot;
 
+    public GameObject gameOver;
+
     private void Update()
     {
         if(Input.GetMouseButtonUp(0))
@@ -55,7 +57,7 @@ public class CraftingManager : MonoBehaviour
         resultSlot.item = null;
 
         string currentRecipeString = "";
-       
+
         foreach (Item item in itemList)
         {
             if (item != null)
@@ -78,6 +80,11 @@ public class CraftingManager : MonoBehaviour
                 resultSlot.GetComponent<Image>().sprite = recipeResults[i].GetComponent<Image>().sprite;
                 resultSlot.item = recipeResults[i];
             }
+        }
+
+        if(currentRecipeString == "fireearthwater")
+        {
+            gameOver.SetActive(true);
         }
     }
 
